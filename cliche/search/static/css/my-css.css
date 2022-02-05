@@ -1,0 +1,100 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.center-all{
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+form{
+    width:100%;
+}
+.nobull {
+    list-style-type: none;
+}
+.f-13{
+    font-size:13px;
+}
+.space-1{
+    margin-top: 1em;
+}
+.space-3{
+    margin-top: 3em;
+}
+.marg-1{
+    margin: 10px;
+    margin-top: 0px;
+}
+.marg-12{
+    margin: 12px;
+}
+.selected{
+    background-color: white;
+    color: black;
+}
+.d-flex{
+    display:flex;
+}
+.hover:hover {
+    cursor: pointer;
+    color: #72afd2;
+}
+.hover2:hover {
+    cursor: pointer;
+}
+a{
+    color: #1a0dab;
+}
+.marg-1{
+    margin: 1em;
+}
+.pull-right{
+    float: right;
+}
+.fs-100{
+    font-size: 100px;
+}
+.fs-42{
+    font-size: 42;
+}
+.pad-l-85{
+    padding-left: 85px;
+}
+body{
+    background-image: linear-gradient(hsla(201, 80%, 75%, 1), hsla(164, 97%, 90%, 1), hsla(350, 100%, 96%, 1));
+}
+.title {
+    font-family: Tangerine;
+}
+.f-nmode{
+    color: #ffb17a !important;
+}
+.glow {
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    }
+    
+@-webkit-keyframes glow {
+    from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+@font-face {
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: 400;
+    src: url("//db.onlinewebfonts.com/t/e8df5da2f7cd0e8b7b36f6ec1ac652e8.woff") format("woff");
+    
+}

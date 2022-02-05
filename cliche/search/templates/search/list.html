@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/fontawesome/all.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/my-css.css' %}">
+<script src="{% static '/fontawesome/all.min.js' %}"></script>   
+<link rel="stylesheet" type="text/css" href="{% static '/css/star.css' %}">
+
+<style>
+
+</style>
+
+{% block includes %} 
+    <div class="space-3"></div>
+    <div class="str header-grid" aria-hidden="true">
+        <div id="star-1" class="star star-1"></div>
+        <div id="star-2" class="star star-2"></div>
+        <div id="star-3" class="star star-3"></div>
+        <div id="star-4" class="star star-4"></div>
+        <div id="star-5" class="star star-1"></div>
+        <div id="star-6" class="star star-2"></div>
+        <div id="star-7" class="star star-3"></div>
+        <div id="star-8" class="star star-4"></div>
+        <div id="star-9" class="star star-1"></div>
+        <div id="star-10" class="star star-2"></div>
+        <div id="star-11" class="star star-3"></div>
+        <div id="star-12" class="star star-4"></div>
+        <div id="star-13" class="star star-1"></div>
+        <div id="star-14" class="star star-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1 pad-l-85">
+            <p class="center glow fs-42 home hover2 title" >CLICHE</p>
+        </div>
+
+        <div class="col-md-5">
+            <form id="form-search" action="" method="get">
+                <div class="d-flex col-md-12 form-group">
+                    <div class="input-group marg-12">
+                        <input class="form-control py-2 border-right-0 border" value="{{str_search}}"  type="search" name="q">
+                        <span class="input-group-append hover search">
+                            <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                        </span>
+                    </div>  
+                    <input type="hidden" name="page" class="form-control" value="1">
+                </div>
+            </form>
+            
+            {% if count != 0 %}
+                <br> 
+                {% if has_first == 1 %}
+                    
+                    {% for val in list_st %}
+                        <ul class="nobull">
+                            <li class="">
+                                <h4><a class="url" href="http://{{ val.url }}">{{ val.domain }}</a></h4>
+                            </li>
+                            <li class="f-13">
+                                <a class="url" href="http://{{ val.url }}">{{ val.url }}</a>
+                            </li>
+                            <li class="desc">{{val.desc|safe}}</li>
+                        </ul>
+                        <br>
+                    {% endfor %}
+                {% endif %} 
+
+                {% if has_second == 1 %}
+                    {% for val in list %}
+                        <ul class="nobull">
+                            <li class="">
+                                <h4><a class="url" href="http://{{ val.url }}">{{ val.domain }}</a></h4>
+                            </li>
+                            <li class="f-13 url">
+                                <a class="url" href="http://{{ val.url }}">{{ val.url }}</a>
+                            </li>
+                            <li class="desc">{{val.desc|safe}}</li>
+                        </ul>
+                        <br>
+                    {% endfor %}
+                {% endif %} 
+
+
+            {% else %}
+                {{ "empty" }}
+            {% endif %} 
+            <div class="about" style="padding-left: 40px;"> Page {{page}} About {{count}} results </div> <br>
+            <div class="row col-md-12 form-group center">
+                {% if page != 1 %}
+                    <a class="btn btn-secondary marg-1" href="{{request.path}}?q={{str_search}}&page=1"> 1 </a> <p>..</p>
+                {% endif %} 
+
+                {% for o in npage %}
+                    {% if o == page %}
+                        <a class="btn btn-secondary marg-1 selected" href="{{request.path}}?q={{str_search}}&page={{o}}"> {{o}} </a>
+                    {% else %}
+                        <a class="btn btn-secondary marg-1 " href="{{request.path}}?q={{str_search}}&page={{o}}"> {{o}} </a>
+                    {% endif %}
+                {% endfor %} 
+            </div>
+
+        </div>
+    </div>
+{% endblock includes %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="{% static '/js/my-js-list.js' %}"></script>   
+
+
+
+
+
+

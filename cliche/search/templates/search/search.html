@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/my-css.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/switch.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/font-face.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/fontawesome/all.min.css' %}">
+    <style>
+        body,html{
+            height:100%
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="str header-grid" aria-hidden="true">
+        <div id="star-1" class="star star-1"></div>
+        <div id="star-2" class="star star-2"></div>
+        <div id="star-3" class="star star-3"></div>
+        <div id="star-4" class="star star-4"></div>
+        <div id="star-5" class="star star-1"></div>
+        <div id="star-6" class="star star-2"></div>
+        <div id="star-7" class="star star-3"></div>
+        <div id="star-8" class="star star-4"></div>
+        <div id="star-9" class="star star-1"></div>
+        <div id="star-10" class="star star-2"></div>
+        <div id="star-11" class="star star-3"></div>
+        <div id="star-12" class="star star-4"></div>
+        <div id="star-13" class="star star-1"></div>
+        <div id="star-14" class="star star-2"></div>
+    </div>
+    <header class="header">
+        <label for="toggle-checkbox" title="Toggle dark mode" class="darkmode-toggle"><span class="visually-hidden">Toggle dark mode</span>
+<input type="checkbox" id="toggle-checkbox">
+<span class="toggle-slider with-transition" aria-hidden="true"></span></label>
+    </header>
+
+    <div class="sun-anim">
+        <svg class="motion-path" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5">
+            <path id="sun-motion-path" d="M250 0C246.203 162.87 154.074 237.407.0 250" fill="none" stroke="none" stroke-width="2"></path>
+        </svg>
+        <button id="moon-or-sun" aria-hidden="true" tabindex="-1" class="sun" style="transform-origin: 50% 50%; transform: translate(172.041px, -121.172px);"></button>
+    </div>
+
+    <div class="center-all col-md-3">
+        <p class="center glow fs-100 home hover2 title" >CLICHE</p>
+        <br>
+        <form id="form-search" action="search" method="get">
+            <div class="input-group">
+                <input class="form-control py-2 border-right-0 border" type="search" name="q">
+                <span class="input-group-append hover search">
+                    <div class="input-group-text bg-transparent"><i class="fa fa-search "></i></div>
+                </span>
+            </div>
+            <input type="hidden" name="page" class="form-control" value="1">
+        </form>
+    </div>
+
+    <script src="{% static '/fontawesome/all.min.js' %}"></script>   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static '/js/my-js.js' %}"></script>   
+    <script src="{% static '/js/gsap.min.js' %}"></script>   
+    <script src="{% static '/js/MotionPathPlugin.min.js' %}"></script>   
+     
+    <script src="{% static '/js/moon.js' %}"></script>   
+
+</body>
+
+</html>

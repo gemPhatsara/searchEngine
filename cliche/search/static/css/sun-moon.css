@@ -1,0 +1,22 @@
+@media (min-width: 61.25em){
+    .sun-anim {
+        width: 15vw;
+    }
+}
+@media (min-width: 46.25em){
+    .sun-anim {
+        left: -50px;
+        width: 25vw;
+        top: -50px;
+    }
+}
+
+.sun-anim {
+    position: fixed;
+    width: 15vw;
+    top: -15px;
+    left: -15px;
+}
+.sun-anim #moon-or-sun.sun{
+    
+    background-image:url("data:image/svg+xml,%3Csvg clip-rule='evenodd' fill-rule='evenodd' stroke-miterlimit='1.5' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='m10 1.5h2'/%3E%3Cpath id='b' d='m10 14.5h-5'/%3E%3Cpath id='c' d='m2.5 13v-1'/%3E%3C/defs%3E%3Cpath d='m3 1h2v-1h5v1h2v1h1v1h1v2h1v5h-1v2h-1.002l.002 1h-1v1h-2v1h-5v-1h-2v-1h-1v-1h-1v-2h-1v-5h1v-2h1.012l-.012-1h1z' fill='%23fff59d'/%3E%3Cg fill='none'%3E%3Cuse stroke='%23fdd835' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='translate(-7)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='translate(10 -10)' xlink:href='%23c'/%3E%3Cuse stroke='%23fdd835' transform='translate(10)' xlink:href='%23c'/%3E%3Cuse stroke='%23fdd835' transform='translate(0 12)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='translate(0 -14)' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 29 0)' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 15 0)' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='translate(0 -14)' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='translate(0 -14)' xlink:href='%23b'/%3E%3Cuse stroke='%23fdd835' transform='translate(-7 12)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 15 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 3 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 3 -7)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' transform='matrix(0 1 -1 0 15 -7)' xlink:href='%23a'/%3E%3Cuse stroke='%23fdd835' xlink:href='%23c'/%3E%3Cuse stroke='%23fdd835' transform='translate(0 -10)' xlink:href='%23c'/%3E%3Cuse stroke='%23fff9c4' transform='translate(0 -13)' xlink:href='%23b'/%3E%3Cuse stroke='%23fff9c4' transform='translate(0 1)' xlink:href='%23a'/%3E%3Cuse stroke='%23fff9c4' transform='translate(-7 1)' xlink:href='%23a'/%3E%3Cuse stroke='%23ffeb3b' transform='translate(-1 -3)' xlink:href='%23c'/%3E%3Cuse stroke='%23ffeb3b' transform='translate(11 -3)' xlink:href='%23c'/%3E%3Cuse stroke='%23ffeb3b' transform='translate(-7 11)' xlink:href='%23a'/%3E%3Cuse stroke='%23ffeb3b' transform='translate(0 -1)' xlink:href='%23b'/%3E%3Cuse stroke='%23ffeb3b' transform='matrix(0 1 -1 0 4 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23ffeb3b' transform='matrix(0 1 -1 0 14 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23ffeb3b' transform='translate(0 11)' xlink:href='%23a'/%3E%3Cuse stroke='%23fff176' transform='translate(0 -2)' xlink:href='%23b'/%3E%3Cuse stroke='%23fff176' transform='matrix(0 1 -1 0 5 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23fff176' transform='matrix(0 1 -1 0 13 0)' xlink:href='%23a'/%3E%3Cuse stroke='%23fff176' transform='translate(8 -1)' xlink:href='%23c'/%3E%3Cuse stroke='%23fff176' transform='translate(0 -3)' xlink:href='%23c'/%3E%3Cuse stroke='%23fff176' transform='translate(2 -1)' xlink:href='%23c'/%3E%3C/g%3E%3C/svg%3E")}
