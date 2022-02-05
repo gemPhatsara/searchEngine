@@ -6,7 +6,7 @@ fake = Faker()
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["cliche"]
-mycol = mydb["se"]
+mycol = mydb["searchengine"]
 
 
 list = mycol.find()

@@ -1,7 +1,5 @@
 from typing import ContextManager
-import django
 from django.shortcuts import render
-import pymongo
 from django import forms
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
@@ -9,8 +7,10 @@ from django.core.paginator import Paginator
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
-import math
 
+import math
+import pymongo
+import django
 import requests
 
 
@@ -32,9 +32,12 @@ def list(request):
         return redirect('http://127.0.0.1:8000')
     else:
         page = int(request.GET.get('page'))
-        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        # myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        
+        myclient = pymongo.MongoClient("mongodb+srv://gemPhatsara:lFXvlkSGRujYyR4J@cluster0.aqf8z.mongodb.net/cliche?retryWrites=true&w=majority")
+
         mydb = myclient["cliche"]
-        mycol = mydb["se"]
+        mycol = mydb["searchengine"]
 
         limit1 = 10
         skip1 = (page-1)*limit1
@@ -97,9 +100,9 @@ def list(request):
         if limit2 != 0:
             has_second = 1
             dataCursor = mycol.find(dictSearch,{"_id": 0, "keyword":0}).limit(limit2).skip(skip2)
-            count += dataCursor.count()
             dataList = []
             for row in dataCursor:
+                count += 1
                 dict={}
                 dict['domain'] = row['domain']
                 dict['url'] = row['url']
