@@ -48,8 +48,8 @@
             
             {% if count != 0 %}
                 <br> 
+                <!-- FIST PAGE -->
                 {% if has_first == 1 %}
-                    
                     {% for val in list_st %}
                         <ul class="nobull">
                             <li class="">
@@ -64,6 +64,7 @@
                     {% endfor %}
                 {% endif %} 
 
+                <!-- SECOND AND MORE PAGE -->
                 {% if has_second == 1 %}
                     {% for val in list %}
                         <ul class="nobull">
@@ -81,12 +82,16 @@
 
 
             {% else %}
-                {{ "empty" }}
+                {{ "Not Found Result" }}
             {% endif %} 
+
+            <!-- PAGINATION -->
             <div class="about" style="padding-left: 40px;"> Page {{page}} About {{count}} results </div> <br>
             <div class="row col-md-12 form-group center">
                 {% if page != 1 %}
-                    <a class="btn btn-secondary marg-1" href="{{request.path}}?q={{str_search}}&page=1"> 1 </a> <p>..</p>
+                    {% for i in spage %}
+                        <a class="btn btn-secondary marg-1" href="{{request.path}}?q={{str_search}}&page={{i}}"> {{i}} </a> 
+                    {% endfor %} 
                 {% endif %} 
 
                 {% for o in npage %}

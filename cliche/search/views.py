@@ -1,3 +1,4 @@
+from traceback import print_tb
 from typing import ContextManager
 from django.shortcuts import render
 from django import forms
@@ -43,7 +44,7 @@ def list(request):
         skip1 = (page-1)*limit1
         
         arr = str_search.split()
-
+        # if search string is more than 1 word 
         if len(arr) > 1:
 
             FirstQry["$or"].append({"desc": {"$regex": str_search}})
@@ -69,11 +70,6 @@ def list(request):
                 j += 1
                 
 
-            # objDomain = mycol.find(FirstQry).limit(limit1).skip(skip1)
-            # for domain in objDomain:
-            #     count_st += 1
-            #     selectedDomain.append(domain['domain'])
-
             # count_st = list_st.count()
             count += count_st
             args['list_st'] = dataListFirst
@@ -90,19 +86,20 @@ def list(request):
                                 ]
                         }    
 
-        if 10-count < 0:
+        if (10-count < 0):
             limit2 = 0
         else:
             limit2 = 10-count
         skip2 = (page-1)*limit2
 
         has_second = 0
+        # has more than 1 page
         if limit2 != 0:
             has_second = 1
             dataCursor = mycol.find(dictSearch,{"_id": 0, "keyword":0}).limit(limit2).skip(skip2)
+            count += mycol.count_documents(dictSearch)
             dataList = []
             for row in dataCursor:
-                count += 1
                 dict={}
                 dict['domain'] = row['domain']
                 dict['url'] = row['url']
@@ -119,14 +116,31 @@ def list(request):
 
             args['list'] = dataList
 
-        x = range(page,page+4)
+        # pagination
+        # set rang page next
+        npage = math.ceil(count/10) 
+        if(page+4 < npage):
+            npage = page+4
+        else:
+            npage += 1
+        rangePage = range(page,npage)
+
+        spage = None
+        # set rang page previous
+        if(page != 1 ):
+            if(page > 3):
+                spage = range(page-3, page)
+            else:
+                spage = range(page-(page-1), page)
+
         args['AllQry'] = AllQry
         args['count'] = count
         args['str_search'] = str_search
         args['has_first'] = has_first
         args['has_second'] = has_second
         args['page'] = page
-        args['npage'] = x
+        args['spage'] = spage
+        args['npage'] = rangePage
         args['selectedDomain'] = selectedDomain
 
         return render(request, "search/list.html", args)

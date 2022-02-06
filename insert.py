@@ -1,61 +1,41 @@
 import pymongo
+import csv
+import json
+from faker import Faker
 
+faker = Faker()
 myclient = pymongo.MongoClient("mongodb+srv://gemPhatsara:lFXvlkSGRujYyR4J@cluster0.aqf8z.mongodb.net/cliche?retryWrites=true&w=majority")
 
 mydb = myclient["cliche"]
 mycol = mydb["searchengine"]
-mylist = []
-x = range(50)
+# Function to convert a CSV to JSON
+# Takes the file paths as arguments
+def make_json(csvFilePath):
+    mylist = []
+    #read csv file
+    with open(csvFilePath, encoding='utf-8') as csvf: 
+        #load csv file data using csv library's dictionary reader
+        csvReader = csv.DictReader(csvf) 
 
-for n in x:
-    n = str(n)
-    dict =  {
-                "title": "Google "+n,
-                "desc": n+"Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for.",
-                "keywords": "",
-                "url": "https://www.google.co.th/",
-                "domain": "google",
+        #convert each csv row into python dict
+        for row in csvReader: 
+            dict =  {
+                "title": row['domain'],
+                "desc": faker.sentence(15),
+                "url": "https://www."+row['domain']+".com/",
+                "domain": row['domain'],
             }
-    mylist.append(dict)
+            mylist.append(dict)
+            #add this python dict to json array
 
-    dict = {
-        "title": "Youtube "+n,
-        "desc": n+"Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
-        "keywords": "",
-        "url": "https://www.youtube.co.th/",
-        "domain": "youtube",
-    }
-    mylist.append(dict)
+        x = mycol.insert_many(mylist)
+        
+# Driver Code
 
-    dict = {
-        "title": "Instagram "+n,
-        "desc": n+"Create an account or log in to Instagram - A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family.",
-        "keywords": "",
-        "url": "https://www.instagram.com/",
-        "domain": "instagram",
-    }
-    mylist.append(dict)
+# Decide the two file paths according to your
+# computer system
+csvFilePath = r'final_15million.csv'
 
-    dict = {
-        "title": "Netflix "+n,
-        "desc": n+"Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price.",
-        "keywords": "",
-        "url": "https://www.netflix.com",
-        "domain": "netflix",
-    }
-    mylist.append(dict)
+# Call the make_json function
+make_json(csvFilePath)
 
-    dict = {
-        "title": "Twitter "+n,
-        "desc": n+"We would like to show you a description here but the site won’t allow us.",
-        "keywords": "",
-        "url": "https://twitter.com",
-        "domain": "twitter",
-    }
-    mylist.append(dict)
-
-
-
-
-mylist.append
-x = mycol.insert_many(mylist)
