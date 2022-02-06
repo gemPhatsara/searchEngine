@@ -53,10 +53,10 @@
                     {% for val in list_st %}
                         <ul class="nobull">
                             <li class="">
-                                <h4><a class="url" href="http://{{ val.url }}">{{ val.domain }}</a></h4>
+                                <h4><a class="url" href="{{ val.url }}">{{ val.domain }}</a></h4>
                             </li>
                             <li class="f-13">
-                                <a class="url" href="http://{{ val.url }}">{{ val.url }}</a>
+                                <a class="url" href="{{ val.url }}">{{ val.url }}</a>
                             </li>
                             <li class="desc">{{val.desc|safe}}</li>
                         </ul>
@@ -69,10 +69,10 @@
                     {% for val in list %}
                         <ul class="nobull">
                             <li class="">
-                                <h4><a class="url" href="http://{{ val.url }}">{{ val.domain }}</a></h4>
+                                <h4><a class="url" href="{{ val.url }}">{{ val.domain }}</a></h4>
                             </li>
                             <li class="f-13 url">
-                                <a class="url" href="http://{{ val.url }}">{{ val.url }}</a>
+                                <a class="url" href="{{ val.url }}">{{ val.url }}</a>
                             </li>
                             <li class="desc">{{val.desc|safe}}</li>
                         </ul>
